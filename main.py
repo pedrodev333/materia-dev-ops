@@ -1,5 +1,7 @@
 from docx import Document
 
+""""Script simples para coletar informações e preencher template"""
+
 userName = input("Digite um nome:")
 userDate = input("Digite uma data (dd/mm/aaaa):")
 
@@ -10,6 +12,7 @@ for p in doc.paragraphs:
         p.text = p.text.replace("{nome}", userName)
     if "{data}" in p.text:
         p.text = p.text.replace("{data}", userDate)
+
 
 
 print("Documento gerado com sucesso!")
