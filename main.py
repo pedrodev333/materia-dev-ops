@@ -1,11 +1,17 @@
-from fastapi import FastAPI
+from docx import Document
 
-app = FastAPI()
+userName = input("Digite um nome:")
+userDate = input("Digite uma data (dd/mm/aaaa):")
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World!"}
+doc = Document("template.docx")
 
-@app.get("/teste1")
-async def funcaoteste():
-    return {"teste":"deu certo"}
+for p in doc.paragraphs:
+    if "{nome}" in p.text:
+        p.text = p.text.replace("{nome}", userName)
+    if "{data}" in p.text:
+        p.text = p.text.replace("{data}", userDate)
+
+
+print("Documento gerado com sucesso!")
+
+doc.save("output.docx")
