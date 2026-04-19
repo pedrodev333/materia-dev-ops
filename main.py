@@ -11,4 +11,7 @@ for p in doc.paragraphs:
     if "{data}" in p.text:
         p.text = p.text.replace("{data}", userDate)
 
+
+print("Documento gerado com sucesso!")
+
 doc.save("output.docx")
