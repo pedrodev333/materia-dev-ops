@@ -31,10 +31,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - name: Deploy on Discord
-        uses: snorrwe/discord-action@v1.0.10
+      - name: Discord Commits
+        uses: Sniddl/discord-commits@v1.8
         with:
-          discord_message: new
-          discord_token: ${{ secrets.DISCORD_WEBHOOK }}
-          post_file: CHANGELOG.md
-          discord_channel: '1496333307628097586' # Note: The quote marks here are required
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          template: "avatar-with-link"
+          include-extras: true
