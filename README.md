@@ -1,3 +1,3 @@
-# AUTOMATIZANDO GERAÇÃO DE DOCUMENTOS
+# API de Filmes com FastAPI
 
-Esse script tem como finalidade a automatização de geração de documentos a partir de um template.
+Esta é uma API simples desenvolvida com FastAPI para gerenciamento básico de filmes.
