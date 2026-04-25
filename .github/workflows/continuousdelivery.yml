@@ -19,7 +19,6 @@ jobs:
           path: |
             **.py
             README.md
-            template.docx
 
   deploy:
     runs-on: ubuntu-latest
