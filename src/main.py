@@ -8,7 +8,7 @@ class Filme(BaseModel):
     id: int
     name: str
     genre: str
-    year: str
+    year: int
     rating: float
 
 @app.get("/helloworld")
