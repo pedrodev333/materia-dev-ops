@@ -11,6 +11,7 @@ class Filme(BaseModel):
     year: int
     rating: float
 
+
 @app.get("/helloworld")
 async def root():
     return {"message": "Hello World!"}
