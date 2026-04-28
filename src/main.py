@@ -11,14 +11,6 @@ class Filme(BaseModel):
     year: int
     rating: float
 
-@app.get("/helloworld")
-async def root():
-    return {"message": "Hello World!"}
-
-@app.get("/funcaoteste")
-async def funcaoteste():
-    return {"teste": True, "num_aleatorio": random.randint(0,57000)}
-
 @app.post("/filmes/cadastro")
 async def create_filme(filme: Filme):
     return filme
@@ -30,3 +22,8 @@ async def update_filme(id_filme: int):
 @app.delete("/filmes/delete/{id_filme}")
 async def delete_filme(id_filme: int):
     return id_filme > 0
+
+@app.post("/filmes/validar")
+async def validar_filme(filme: Filme):
+    return filme.year > 1888 and 0 <= filme.rating <= 10 and len(filme.name.strip()) > 0
+
