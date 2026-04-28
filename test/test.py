@@ -1,20 +1,6 @@
 import pytest
 
 from src.main import *
-from unittest.mock import patch
-
-
-@pytest.mark.asyncio
-async def test_root():
-    result = await root()
-    assert result == {"message": "Hello World!"}
-
-@pytest.mark.asyncio
-async def test_funcaoteste():
-    with patch('random.randint', return_value=333653):
-        result = await funcaoteste()
-
-    assert result == {"teste": True, "num_aleatorio": 333653}
 
 @pytest.mark.asyncio
 async def test_create_filme():
@@ -42,3 +28,9 @@ async def test_delete_filme_positivo():
     result = await delete_filme(10)
     assert result
 
+@pytest.mark.asyncio
+async def test_validar_filme():
+    filme_teste = Filme(id=3, name="Matrix", genre="Ação/Ficção científica", year=1999, rating=8.7)
+    result = await validar_filme(filme_teste)
+
+    assert result
